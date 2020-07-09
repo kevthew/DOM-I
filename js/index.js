@@ -11,7 +11,7 @@ const siteContent = {
   "cta": {
     "h1": "DOM Is Awesome",
     "button": "Get Started",
-    "img-src": "img/header-img.png"
+    "img-src2": "img/header-img.png"
   },
   "main-content": {
     "features-h4":"Features",
@@ -37,6 +37,71 @@ const siteContent = {
   },
 };
 
-// Example: Update the img src for the logo
+// imgs
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+let mainimg = document.getElementById("cta-img");
+mainimg.setAttribute('src', siteContent["cta"]["img-src2"]);
+
+let midImg = document.getElementById("middle-img");
+midImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+//nav
+let navItem = document.querySelectorAll("a");
+navItem.forEach((element, index) => {
+  element.textContent = siteContent['nav'][`nav-item-${index+1}`]
+});
+
+let append = document.createElement("a");
+let newText = document.createTextNode("Append");
+append.appendChild(newText);
+document.querySelector("nav").appendChild(append);
+
+let prepend2 = document.createElement("a");
+let newText2 = document.createTextNode("Prepend");
+prepend2.prepend(newText2);
+document.querySelector("nav").prepend(prepend2);
+
+let navColor = document.querySelectorAll("a");
+navColor.forEach((element) => {
+  element.style.color = "green"
+});
+
+//top content
+let ctaText = document.querySelector("h1");
+ctaText.textContent = siteContent.cta.h1;
+
+let ctaButton = document.querySelector("button")
+ctaButton.textContent = siteContent.cta.button;
+
+//h4's
+let h4Title = document.querySelectorAll("h4");
+h4Title[0].textContent = siteContent["main-content"]["features-h4"];
+h4Title[1].textContent = siteContent["main-content"]["about-h4"];
+h4Title[2].textContent = siteContent["main-content"]["services-h4"];
+h4Title[3].textContent = siteContent["main-content"]["product-h4"];
+h4Title[4].textContent = siteContent["main-content"]["vision-h4"];
+h4Title[5].textContent = siteContent.contact["contact-h4"];
+
+let paragrphs = document.querySelectorAll("p");
+paragrphs[0].textContent = siteContent["main-content"]["features-content"];
+paragrphs[1].textContent = siteContent["main-content"]["about-content"];
+paragrphs[2].textContent = siteContent["main-content"]["services-content"];
+paragrphs[3].textContent = siteContent["main-content"]["product-content"];
+paragrphs[4].textContent = siteContent["main-content"]["vision-content"];
+paragrphs[5].textContent = siteContent.contact.address;
+paragrphs[6].textContent = siteContent.contact.phone;
+paragrphs[7].textContent = siteContent.contact.email;
+paragrphs[8].textContent = siteContent.footer.copyright;
+
+
+//stretch
+let navBg = document.querySelector("header");
+navBg.style.background = "lightgrey";
+
+let Bg = document.querySelector(".container");
+Bg.style.background = "lightblue";
+
+let buttonBg = document.querySelector("button")
+buttonBg.style.background = "lightgrey"
