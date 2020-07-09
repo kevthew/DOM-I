@@ -48,8 +48,8 @@ let midImg = document.getElementById("middle-img");
 midImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
 //nav
-let navItems = document.querySelectorAll("a");
-navItems.forEach((element, index) => {
+let navItem = document.querySelectorAll("a");
+navItem.forEach((element, index) => {
   element.textContent = siteContent['nav'][`nav-item-${index+1}`]
 });
 
